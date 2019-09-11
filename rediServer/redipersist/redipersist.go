@@ -7,8 +7,8 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-	"github.com/King-tu/redicache/rediset"
-	"github.com/King-tu/redicache/redistr"
+	"github.com/King-tu/redicache/rediServer/rediset"
+	"github.com/King-tu/redicache/rediServer/redistr"
 	"regexp"
 )
 
