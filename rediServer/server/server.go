@@ -20,8 +20,7 @@ func NewServer() *Server {
 }
 
 func (s *Server) Server() {
-	address := fmt.Sprint(conf.IP +":"+ conf.Port)
-	tcpAddr, err := net.ResolveTCPAddr("tcp", address)
+	tcpAddr, err := net.ResolveTCPAddr("tcp", conf.ADDRESS)
 	if err != nil {
 		log.Println(err)
 		return

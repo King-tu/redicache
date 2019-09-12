@@ -14,7 +14,7 @@ type RediSetObj struct {
 	RediSet map[string]map[string]struct{}
 }
 
-////创建集合的操作对象
+//创建集合的操作对象
 func NewRediSetObj() *RediSetObj {
 	return &RediSetObj{
 		RediSet: make(map[string]map[string]struct{}),
@@ -46,7 +46,12 @@ func (rsObj *RediSetObj) Sadd(key string, members []string) string {
 	return fmt.Sprintf("(integer) %d", count)
 }
 
-
+//在key集合中移除指定的元素.
+//
+// 如果指定的元素不是key集合中的元素则忽略 如果key集合不存在则被视为一个空的集合，该命令返回0.
+//如果key的类型不是一个集合,则返回错误.
+//返回值
+//integer-reply:从集合中移除元素的个数，不包括不存在的成员.
 func (rsObj *RediSetObj) Srem(key string, members []string) string {
 	var count int
 
@@ -62,12 +67,11 @@ func (rsObj *RediSetObj) Srem(key string, members []string) string {
 	return fmt.Sprintf("(integer) %d", count)
 }
 
-//在key集合中移除指定的元素.
+//返回key集合所有的元素.
 //
-// 如果指定的元素不是key集合中的元素则忽略 如果key集合不存在则被视为一个空的集合，该命令返回0.
-//如果key的类型不是一个集合,则返回错误.
+//该命令的作用与使用一个参数的SINTER 命令作用相同.
 //返回值
-//integer-reply:从集合中移除元素的个数，不包括不存在的成员.
+//array-reply:集合中的所有元素.
 func (rsObj *RediSetObj) Smembers(key string) (members string) {
 	RediSetLock.RLock()
 	defer RediSetLock.RUnlock()

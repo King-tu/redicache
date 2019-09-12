@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b415615e-862b-4468-a1bf-d5aa41760a47" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/$CACHE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/redicache.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/conf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redicli/redicli.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redipersist/redipersist.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rediset/rediset.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redistr/redistr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redistr/redistr_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/conf/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/conf/conf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/rediset/rediset.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/rediset/rediset.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/redistr/redistr_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/server/server.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +43,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Go_WorkSpace/0604就业班/zinxProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
@@ -85,7 +76,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
