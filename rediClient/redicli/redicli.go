@@ -1,4 +1,5 @@
-package main
+//redicli包负责连接服务器、读取键盘输入并发送至服务器
+package redicli
 
 import (
 	"bufio"
@@ -27,8 +28,8 @@ const (
 	Port = "6399"
 )
 
+//连接服务器，读取键盘输入
 func RediGo() {
-
 	address := fmt.Sprint(IP +":"+ Port)
 	conn, err := net.Dial("tcp", address)
 	if err != nil {

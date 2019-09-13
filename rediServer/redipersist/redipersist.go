@@ -1,21 +1,21 @@
+//redipersist包实现数据持久化的及keys的查询删除功能
 package redipersist
 
 import (
 	"bytes"
 	"encoding/gob"
 	"fmt"
+	"github.com/King-tu/redicache/rediServer/conf"
+	"github.com/King-tu/redicache/rediServer/rediset"
+	"github.com/King-tu/redicache/rediServer/redistr"
 	"io/ioutil"
 	"log"
 	"os"
-	"github.com/King-tu/redicache/rediServer/rediset"
-	"github.com/King-tu/redicache/rediServer/redistr"
 	"regexp"
+	"strings"
 )
 
-const (
-	REDI_FLIE_NAME = "dump.rdb"
-)
-
+//定义RediCache对象
 type RediCache struct {
 	RediStrObj *redistr.RediStrObj
 	RediSetObj *rediset.RediSetObj
@@ -31,13 +31,15 @@ func NewRediCache() *RediCache {
 	return rc
 }
 
+//查找所有符合给定模式pattern（正则表达式）的 key 。
 func (rc *RediCache) GetKeys(pattern string) (keys string) {
-	if pattern == "*" {
-		//TODO
+/*	if pattern == "*" {
 		//fmt.Println("pattern = ", pattern)
-		//“.” 匹配任意一个 字符。
 		pattern = "."
-	}
+	}*/
+
+	//redis中，“.” 匹配任意一个 字符。
+	pattern = strings.Replace(pattern, "*", ".", -1)
 	regExp := regexp.MustCompile(pattern)
 
 	for key, _ := range rc.RediStrObj.RediStr {
@@ -60,6 +62,7 @@ func (rc *RediCache) GetKeys(pattern string) (keys string) {
 }
 
 //删除指定的一批keys，如果删除中的某些key不存在，则直接忽略。
+//
 //返回值
 //integer-reply： 被删除的keys的数量
 func (rc *RediCache) Del(keys []string) string {
@@ -104,7 +107,7 @@ func (rc *RediCache) SaveToFile() string {
 		return ""
 	}
 
-	err = ioutil.WriteFile(REDI_FLIE_NAME, buf.Bytes(), 0600)
+	err = ioutil.WriteFile(conf.REDI_FLIE_NAME, buf.Bytes(), 0600)
 	if err != nil {
 		log.Println("ioutil.WriteFile err: ", err)
 		return ""
@@ -115,11 +118,11 @@ func (rc *RediCache) SaveToFile() string {
 
 //从磁盘文件加载数据
 func (rc *RediCache) LoadFromFile() {
-	if IsFileNotExist(REDI_FLIE_NAME) {
-		log.Println(REDI_FLIE_NAME, " 文件不存在")
+	if IsFileNotExist(conf.REDI_FLIE_NAME) {
+		log.Println(conf.REDI_FLIE_NAME, " 文件不存在")
 		return
 	}
-	rdbBuf, err := ioutil.ReadFile(REDI_FLIE_NAME)
+	rdbBuf, err := ioutil.ReadFile(conf.REDI_FLIE_NAME)
 	if err != nil {
 		log.Println("ioutil.ReadFile err: ", err)
 		return

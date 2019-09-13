@@ -79,14 +79,13 @@ func (rsObj *RediSetObj) Smembers(key string) (members string) {
 	return PrintSet(rsObj.RediSet[key])
 }
 
-/*
-返回成员 member 是否是存储的集合 key的成员.
 
-返回值
-integer-reply,详细说明:
-如果member元素是集合key的成员，则返回1
-如果member元素不是key的成员，或者集合key不存在，则返回0
-*/
+//返回成员 member 是否是存储的集合 key的成员.
+//
+//返回值
+//integer-reply,详细说明:
+//如果member元素是集合key的成员，则返回1
+//如果member元素不是key的成员，或者集合key不存在，则返回0
 func (rsObj *RediSetObj) Sismember(key, member string) string {
 	var count int
 
@@ -101,13 +100,12 @@ func (rsObj *RediSetObj) Sismember(key, member string) string {
 	return fmt.Sprintf("(integer) %d", count)
 }
 
-/*
-返回指定所有的集合的成员的交集.
 
-如果key不存在则被认为是一个空的集合,当给定的集合为空的时候,结果也为空.(一个集合为空，结果一直为空).
-返回值
-array-reply: 结果集成员的列表.
-*/
+//返回指定所有的集合的成员的交集.
+//
+//如果key不存在则被认为是一个空的集合,当给定的集合为空的时候,结果也为空.(一个集合为空，结果一直为空).
+//返回值
+//array-reply: 结果集成员的列表.
 func (rsObj *RediSetObj) Sinter(keys []string) (members string) {
 	if _, ok := rsObj.RediSet[keys[0]]; !ok {
 		members = "(empty list or set)"

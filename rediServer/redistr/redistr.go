@@ -1,4 +1,4 @@
-//redistr提供一些操作键值对存储的方法
+//redistr包实现键值对的Get、Set方法
 package redistr
 
 import (

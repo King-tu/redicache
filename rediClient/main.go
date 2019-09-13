@@ -1,6 +1,9 @@
 package main
 
-import "log"
+import (
+	"github.com/King-tu/redicache/rediClient/redicli"
+	"log"
+)
 
 func init() {
 	log.SetPrefix("[ErrorMsg] ")
@@ -8,5 +11,5 @@ func init() {
 }
 
 func main()  {
-	RediGo()
+	redicli.RediGo()
 }

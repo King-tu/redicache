@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 )
-
+//初始化log配置
 func init() {
 	errFile,err:=os.OpenFile("errors.log",os.O_CREATE|os.O_WRONLY|os.O_APPEND,0666)
 	if err!=nil{
@@ -24,8 +24,7 @@ func init() {
 }
 
 func main() {
-
 	RediServer := server.NewServer()
+	go RediServer.TimeToSave()
 	RediServer.Server()
-
 }

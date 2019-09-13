@@ -1,3 +1,4 @@
+//server包搭建了一个简单的tcp服务器，监听客户端连接
 package server
 
 import (
@@ -7,18 +8,22 @@ import (
 	"log"
 	"net"
 	"strings"
+	"time"
 )
 
+//定义服务器操作对象
 type Server struct {
 	RC *redipersist.RediCache
 }
 
+//创建服务器操作对象
 func NewServer() *Server {
 	return &Server{
 		RC: redipersist.NewRediCache(),
 	}
 }
 
+//启动服务器，监听客户端连接
 func (s *Server) Server() {
 	tcpAddr, err := net.ResolveTCPAddr("tcp", conf.ADDRESS)
 	if err != nil {
@@ -68,8 +73,8 @@ func (s *Server) Server() {
 	}
 }
 
-
-func (s Server) Handle(cliData string) string {
+//处理客户端命令
+func (s *Server) Handle(cliData string) string {
 
 	//按空格切割
 	strs := strings.Fields(cliData)
@@ -147,5 +152,14 @@ func (s Server) Handle(cliData string) string {
 
 	default:
 		return fmt.Sprintf("(error) ERR unknown command '%s'", strs[0])
+	}
+}
+
+//定时保存缓存数据
+func (s *Server) TimeToSave()  {
+	ticker := time.NewTicker(time.Second * conf.DURATION)
+	for {
+		<- ticker.C
+		s.RC.SaveToFile()
 	}
 }

@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b415615e-862b-4468-a1bf-d5aa41760a47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rediServer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediClient/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediClient/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediClient/redicli.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediClient/redicli/redicli.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rediServer/conf/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/conf/conf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/errors.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rediServer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/redipersist/redipersist.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/redipersist/redipersist.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rediServer/rediset/rediset.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/rediset/rediset.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rediServer/redistr/redistr_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rediServer/redistr/redistr.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/redistr/redistr.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rediServer/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/rediServer/server/server.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,14 +49,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\redicache" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\gitProject\King-tu\redicache" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Go_WorkSpace\src\github.com\King-tu\redicache\rediClient\redicli" />
+      <recent name="D:\redicache" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -67,6 +71,60 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Go Test.TestRediSetObj_Sunion in github.com/King-tu/redicache/rediServer/rediset">
+    <configuration name="TestRediSetObj_Sadd in github.com/King-tu/redicache/rediServer/rediset" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="redicache" />
+      <working_directory value="$PROJECT_DIR$/rediServer/rediset" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/King-tu/redicache/rediServer/rediset" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestRediSetObj_Sadd$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestRediSetObj_Sinter in github.com/King-tu/redicache/rediServer/rediset" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="redicache" />
+      <working_directory value="$PROJECT_DIR$/rediServer/rediset" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/King-tu/redicache/rediServer/rediset" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestRediSetObj_Sinter$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestRediSetObj_Srem in github.com/King-tu/redicache/rediServer/rediset" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="redicache" />
+      <working_directory value="$PROJECT_DIR$/rediServer/rediset" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/King-tu/redicache/rediServer/rediset" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestRediSetObj_Srem$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestRediSetObj_Sunion in github.com/King-tu/redicache/rediServer/rediset" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="redicache" />
+      <working_directory value="$PROJECT_DIR$/rediServer/rediset" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/King-tu/redicache/rediServer/rediset" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestRediSetObj_Sunion$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestRediSetObj_Sunion in github.com/King-tu/redicache/rediServer/rediset" />
+        <item itemvalue="Go Test.TestRediSetObj_Sinter in github.com/King-tu/redicache/rediServer/rediset" />
+        <item itemvalue="Go Test.TestRediSetObj_Srem in github.com/King-tu/redicache/rediServer/rediset" />
+        <item itemvalue="Go Test.TestRediSetObj_Sadd in github.com/King-tu/redicache/rediServer/rediset" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
