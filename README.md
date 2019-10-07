@@ -1,4 +1,3 @@
-# redicache
 用Golang实现的一个线程安全的类 redis的缓存。
 
 	1、使用Golang的map实现Redicache键值对的添加(Set)、查询(Get)方法
