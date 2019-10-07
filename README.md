@@ -1,5 +1,6 @@
 # redicache
 用Golang实现的一个线程安全的类 redis的缓存。
+
 	1、使用Golang的map实现Redicache键值对的添加(Set)、查询(Get)方法
 	2、实现键的查询(keys)、删除(del)功能，其中keys命令可以匹配正则表达式
 	3、利用map的key无序且唯一的特点，实现Redicache集合(set)元素的添加(Sadd)、删除(Srem)、遍历(Smembers)、是否存在(Sismember)等方法以及多个集合之间的交集(Sinter)和并集(Sunion)运算
